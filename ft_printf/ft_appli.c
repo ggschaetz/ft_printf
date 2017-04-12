@@ -6,7 +6,7 @@
 /*   By: gschaetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 07:44:05 by gschaetz          #+#    #+#             */
-/*   Updated: 2017/04/12 19:03:15 by gschaetz         ###   ########.fr       */
+/*   Updated: 2017/04/12 19:13:13 by gschaetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ char		*ft_distrib_d(t_printf *var, char *tmp, char *cp, char type)
 
 	width = var->format_split[var->ich].width;
 	f = var->format_split[var->ich].flag;
-	if (ft_strchr(f, ' ') != NULL && var->format_split[var->ich].prec == 0 \
+	if (ft_strchr(f, ' ') != NULL && ft_strchr(f, '+') == NULL && \
+			ft_strchr(f, '-') == NULL && ft_strchr(f, '#') == NULL && \
+			ft_strchr(f, '0') == NULL && var->format_split[var->ich].prec == 0 \
 			&& width == 0 && type != 'u')
 		tmp = ft_add_space(tmp, cp);
 	else if (width >= var->format_split[var->ich].prec && width != 0)
