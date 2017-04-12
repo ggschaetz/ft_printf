@@ -6,7 +6,7 @@
 /*   By: gschaetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 07:44:05 by gschaetz          #+#    #+#             */
-/*   Updated: 2017/04/11 16:06:22 by gschaetz         ###   ########.fr       */
+/*   Updated: 2017/04/12 16:17:22 by gschaetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char		*ft_distrib_d(t_printf *var, char *tmp, char *cp, char type)
 
 	width = var->format_split[var->ich].width;
 	f = var->format_split[var->ich].flag;
+	//printf("test w = %d, p = %d, f = %s\n", width, var->format_split[var->ich].prec, f);
 	if (f[0] == ' ' && f[1] == '\0' && var->format_split[var->ich].prec == 0 \
 			&& width == 0 && type != 'u')
 		tmp = ft_add_space(tmp, cp);
@@ -68,6 +69,11 @@ char		*ft_appli_prec_nb(t_printf *var, char *cp, char *tmp)
 	j = ft_check_signe(var, cp, tmp, j);
 	if (j == 1)
 		prec++;
+	if (ft_strchr(var->format_split[var->ich].flag, ' ') != NULL)
+	{
+		tmp[var->ct++] = ' ';
+		i++;
+	}
 	if (ft_strchr(var->format_split[var->ich].flag, '#') != NULL && \
 		(var->format_split[var->ich].type == 'x' || \
 		var->format_split[var->ich].type == 'X'))

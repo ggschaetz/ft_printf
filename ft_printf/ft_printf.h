@@ -6,7 +6,7 @@
 /*   By: gschaetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 12:13:53 by gschaetz          #+#    #+#             */
-/*   Updated: 2017/04/12 15:10:08 by gschaetz         ###   ########.fr       */
+/*   Updated: 2017/04/12 16:06:03 by gschaetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include "../libft.h"
 
+#include <stdio.h>
 typedef struct		s_format
 {
 	char			*stock;
