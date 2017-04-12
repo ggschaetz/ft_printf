@@ -6,7 +6,7 @@
 /*   By: gschaetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 11:00:39 by gschaetz          #+#    #+#             */
-/*   Updated: 2017/04/12 16:17:12 by gschaetz         ###   ########.fr       */
+/*   Updated: 2017/04/12 16:47:55 by gschaetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,7 @@ int			ft_printf(const char *format, ...)
 /*
 int		main()
 {
-	ft_printf("% 4.5i\n", 42);
-	printf("%  4.5i\n", 42);
-	printf("%  4.5d\n", 42);
+	printf("test= %d\n",ft_printf("% 4.5i\n", 42));
+	printf("test1= %d\n",printf("%  4.5i\n", 42));
 	return (0);
 }*/

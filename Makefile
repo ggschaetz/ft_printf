@@ -6,7 +6,7 @@
 #    By: gschaetz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/10 13:49:44 by gschaetz          #+#    #+#              #
-#    Updated: 2017/04/12 14:33:41 by gschaetz         ###   ########.fr        #
+#    Updated: 2017/04/12 16:47:33 by gschaetz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ PO = ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o ft_strncat.o \
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(INC)
 	gcc -Wall -Wextra -Werror -c $(SRC) -I $(INC)
 	ar rc $(NAME) $(PO)
 	ranlib $(NAME)
