@@ -6,7 +6,7 @@
 /*   By: gschaetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 12:13:53 by gschaetz          #+#    #+#             */
-/*   Updated: 2017/04/12 16:06:03 by gschaetz         ###   ########.fr       */
+/*   Updated: 2017/04/12 19:00:57 by gschaetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdarg.h>
 # include "../libft.h"
 
-#include <stdio.h>
 typedef struct		s_format
 {
 	char			*stock;
@@ -65,6 +64,7 @@ struct				s_p
 	int				nbc;
 };
 
+int					ft_call_add_ox(t_printf *var, int i, char *tmp, char *cp);
 char				*ft_add_ox1(t_printf *var, char *tmp, char *cp);
 void				ft_put_s(char *tmp, char *cp, t_printf *var, char *s);
 char				*ft_modif_s(t_printf *var, int size, char *cp, char *tmp);

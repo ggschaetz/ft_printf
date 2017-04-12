@@ -6,7 +6,7 @@
 /*   By: gschaetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/30 10:21:59 by gschaetz          #+#    #+#             */
-/*   Updated: 2017/04/12 14:23:55 by gschaetz         ###   ########.fr       */
+/*   Updated: 2017/04/12 19:01:23 by gschaetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ char		*ft_add_ox(t_printf *var, char *tmp, char *cp)
 	if (ft_strchr(var->format_split[var->ich].stock, '.') != NULL && \
 			prec == 0 && var->format_split[var->ich].width == 0 && \
 			ft_strchr(var->format_split[var->ich].flag, 'p') == NULL)
+	{
 		return (tmp);
+	}
 	if (cp[0] == '0' && cp[1] == '\0' && \
 			ft_strchr(var->format_split[var->ich].flag, 'p') == NULL)
 	{

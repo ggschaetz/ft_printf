@@ -6,7 +6,7 @@
 /*   By: gschaetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 11:00:39 by gschaetz          #+#    #+#             */
-/*   Updated: 2017/04/12 17:10:43 by gschaetz         ###   ########.fr       */
+/*   Updated: 2017/04/12 18:51:09 by gschaetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,14 +97,3 @@ int			ft_printf(const char *format, ...)
 	va_end(ap);
 	return (var->nbc);
 }
-/*
-int		main()
-{
-//	printf("test= %d\n",ft_printf("%04.2i\n", 42));
-//	printf("test1= %d\n",printf("%04.2i\n", 42));
-	ft_printf("%04.2i\n", 42);
-	printf("%04.2i\n", 42);
-	ft_printf("%+04d\n", 42);
-	printf("%+04d\n", 42);
-	return (0);
-}*/
