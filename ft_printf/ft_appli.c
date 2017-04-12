@@ -6,7 +6,7 @@
 /*   By: gschaetz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 07:44:05 by gschaetz          #+#    #+#             */
-/*   Updated: 2017/04/12 16:17:22 by gschaetz         ###   ########.fr       */
+/*   Updated: 2017/04/12 17:02:44 by gschaetz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,12 @@ char		*ft_zero(t_printf *var, char *tmp, char *cp)
 	if (var->format_split[var->ich].flag[0] == ' ')
 		tmp[var->ct++] = ' ';
 	while (var->ct < max)
-		tmp[var->ct++] = '0';
+	{
+		if (var->format_split[var->ich].prec > var->lenf)
+			tmp[var->ct++] = '0';
+		else
+			tmp[var->ct++] = ' ';
+	}
 	return (tmp);
 }
 
