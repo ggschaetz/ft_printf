@@ -6,7 +6,7 @@
 #    By: gschaetz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/10 13:49:44 by gschaetz          #+#    #+#              #
-#    Updated: 2017/04/12 16:47:33 by gschaetz         ###   ########.fr        #
+#    Updated: 2017/04/12 19:50:55 by gschaetz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ SRC = ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c ft_strncat.c \
 	  ft_printf/ft_s1.c ft_printf/ft_add_ox1.c
 
 
-PO = ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o ft_strncat.o \
+PO =  ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o ft_strncat.o \
 	  ft_memset.o ft_putchar.o ft_putchar_fd.o ft_putstr.o ft_putstr_fd.o \
 	  ft_putendl.o ft_putendl_fd.o ft_putnbr.o ft_putnbr_fd.o \
 	  ft_strcmp.o ft_strncmp.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
@@ -54,20 +54,29 @@ PO = ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o ft_strncat.o \
 	  ft_memmove.o ft_memcpy_rev.o ft_strlcat.o ft_itoa.o ft_strsplit.o \
 	  ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o \
 	  ft_lstmap.o ft_sqrt.o ft_foreach.o ft_swap.o get_next_line.o \
-	  ft_printf.o ft_stock_format_str.o ft_parce_base.o ft_prefixe.o \
-	  ft_precision.o ft_flags.o ft_width.o ft_type.o ft_convertion.o \
-	  ft_init_fct0.o ft_init_fct1.o ft_init_fct2.o ft_check_prefixe.o \
-	  ft_iitoa.o ft_uitoa.o ft_appli.o ft_d.o ft_appli1.o ft_appli2.o \
-	  ft_uitoa_base.o ft_uitoa_base_min.o ft_uitoa_base_maj.o ft_appli3.o \
-	  ft_s.o ft_c.o ft_percent.o ft_lc.o ft_uatoi.o ft_oct_lc.o ft_ls.o \
-	  ft_d1.o ft_s1.o ft_add_ox1.o
+	  ft_printf/ft_printf.o ft_printf/ft_stock_format_str.o \
+	  ft_printf/ft_parce_base.o ft_printf/ft_prefixe.o \
+	  ft_printf/ft_precision.o ft_printf/ft_flags.o ft_printf/ft_width.o \
+	  ft_printf/ft_type.o ft_printf/ft_convertion.o \
+	  ft_printf/ft_init_fct0.o ft_printf/ft_init_fct1.o \
+	  ft_printf/ft_init_fct2.o ft_printf/ft_check_prefixe.o \
+	  ft_iitoa.o ft_uitoa.o ft_printf/ft_appli.o \
+	  ft_printf/ft_d.o ft_printf/ft_appli1.o ft_printf/ft_appli2.o \
+	  ft_uitoa_base.o ft_printf/ft_uitoa_base_min.o \
+	  ft_printf/ft_uitoa_base_maj.o ft_printf/ft_appli3.o \
+	  ft_printf/ft_s.o ft_printf/ft_c.o ft_printf/ft_percent.o \
+	  ft_printf/ft_lc.o ft_printf/ft_uatoi.o ft_printf/ft_oct_lc.o \
+	  ft_printf/ft_ls.o ft_printf/ft_d1.o ft_printf/ft_s1.o \
+	  ft_printf/ft_add_ox1.o
 
 all: $(NAME)
 
-$(NAME): $(INC)
-	gcc -Wall -Wextra -Werror -c $(SRC) -I $(INC)
-	ar rc $(NAME) $(PO)
-	ranlib $(NAME)
+%.o:%.c
+	@gcc -Wall -Wextra -Werror -c $< -o $@
+
+$(NAME): $(PO) $(INC)
+	@ar rc $(NAME) $(PO)
+	@ranlib $(NAME)
 	@echo "\033[31m_|        _|_|_|  _|_|_|    _|_|_|_|  _|_|_|_|_|        _|_|_|        _|_|_|"
 	@echo "_|          _|    _|    _|  _|            _|          _|            _|      "
 	@echo "_|          _|    _|_|_|    _|_|_|        _|          _|  _|_|        _|_|  "
@@ -79,7 +88,6 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
-	@rm -rf $(NAME1)
 
 re: fclean all
 
